@@ -1,33 +1,33 @@
 scan_id,show,ticket_type,amount,scanned_at
-TS001,Electric Pulse,VIP,63,2025-11-14 19:39
-TS002,Electric Pulse,GA,44,2025-11-14 19:41
-TS002,Electric Pulse,GA,44,2025-11-14 19:41
-TS003,Electric Pulse,GA,42,2025-11-14 19:49
-TS004,Electric Pulse,presale,39,2025-11-14 19:54
+TS001,Electric Pulse,VIP,63,2025-10-23 19:39
+TS002,Electric Pulse,GA,44,2025-10-23 19:41
+TS002,Electric Pulse,GA,44,2025-10-23 19:41
+TS003,Electric Pulse,GA,42,2025-10-23 19:49
+TS004,Electric Pulse,presale,39,2025-10-23 19:54
 TS005,Latin Fire Night,VIP,52,2025-11-15 19:39
 TS006,Latin Fire Night,GA,30,2025-11-15 19:43
 TS007,Latin Fire Night,GA,32,2025-11-15 19:50
 TS008,Latin Fire Night,presale,27,2025-11-15 19:55
-TS009,Broadway Bites,VIP,66,2025-11-21 19:34
-TS010,Broadway Bites,GA,48,2025-11-21 19:43
-TS011,Broadway Bites,GA,47,2025-11-21 19:52
-TS012,Broadway Bites,presale,40,2025-11-21 19:55
+TS009,Broadway Bites,VIP,66,2025-11-16 19:34
+TS010,Broadway Bites,GA,48,2025-11-16 19:43
+TS011,Broadway Bites,GA,47,2025-11-16 19:52
+TS012,Broadway Bites,presale,40,2025-11-16 19:55
 TS013,Midnight Comedy Hour,VIP,57,2025-11-22 19:38
 TS014,Midnight Comedy Hour,GA,37,2025-11-22 19:46
 TS015,Midnight Comedy Hour,GA,35,2025-11-22 19:52
 TS016,Midnight Comedy Hour,presale,33,2025-11-22 20:01
-TS017,Sunset Jazz Trio,VIP,50,2025-11-28 19:34
-TS018,Sunset Jazz Trio,GA,31,2025-11-28 19:42
-TS019,Sunset Jazz Trio,GA,28,2025-11-28 19:47
-TS020,Sunset Jazz Trio,presale,25,2025-11-28 19:51
-TS021,Sunset Jazz Trio,GA,30,2025-11-28 19:54
-TS022,Open Mic Underground,comp,comp,2025-12-05 19:36
-TS023,Open Mic Underground,comp,,2025-12-05 19:42
-TS024,Open Mic Underground,GA,16,2025-12-05 19:45
-TS025,Electric Pulse,VIP,65,2025-12-06 19:39
-TS026,Electric Pulse,GA,44,2025-12-06 19:45
-TS027,Electric Pulse,GA,45,2025-12-06 19:49
-TS028,Electric Pulse,presale,38,2025-12-06 19:58
-TS029,Electric Pulse,comp,n/a,2025-11-14 20:11
-TS030,Electric Pulse,GA,44,2025-11-14 23:58
-TS031,Electric Pulse,GA,43,2025-11-15 00:04
+TS017,Sunset Jazz Trio,VIP,50,2025-12-03 19:34
+TS018,Sunset Jazz Trio,GA,31,2025-12-03 19:42
+TS019,Sunset Jazz Trio,GA,28,2025-12-03 19:47
+TS020,Sunset Jazz Trio,presale,25,2025-12-03 19:51
+TS021,Sunset Jazz Trio,GA,30,2025-12-03 19:54
+TS022,Open Mic Underground,comp,comp,2025-12-06 19:36
+TS023,Open Mic Underground,comp,,2025-12-06 19:42
+TS024,Open Mic Underground,GA,16,2025-12-06 19:45
+TS025,Electric Pulse,VIP,65,2025-12-04 19:39
+TS026,Electric Pulse,GA,44,2025-12-04 19:45
+TS027,Electric Pulse,GA,45,2025-12-04 19:49
+TS028,Electric Pulse,presale,38,2025-12-04 19:58
+TS029,Electric Pulse,comp,n/a,2025-10-23 20:11
+TS030,Electric Pulse,GA,44,2025-10-23 23:58
+TS031,Electric Pulse,GA,43,2025-10-24 00:04

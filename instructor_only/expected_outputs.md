@@ -45,17 +45,17 @@ so they are not large orders. TS024 (16) is simply below the threshold.
 
 ```text
 scan_id           show       scanned_at
-  TS001 Electric Pulse 2025-11-14 19:39
-  TS002 Electric Pulse 2025-11-14 19:41
-  TS002 Electric Pulse 2025-11-14 19:41
-  TS003 Electric Pulse 2025-11-14 19:49
-  TS004 Electric Pulse 2025-11-14 19:54
-  TS029 Electric Pulse 2025-11-14 20:11
-  TS030 Electric Pulse 2025-11-14 23:58
-  TS031 Electric Pulse 2025-11-15 00:04
+  TS001 Electric Pulse 2025-10-23 19:39
+  TS002 Electric Pulse 2025-10-23 19:41
+  TS002 Electric Pulse 2025-10-23 19:41
+  TS003 Electric Pulse 2025-10-23 19:49
+  TS004 Electric Pulse 2025-10-23 19:54
+  TS029 Electric Pulse 2025-10-23 20:11
+  TS030 Electric Pulse 2025-10-23 23:58
+  TS031 Electric Pulse 2025-10-24 00:04
 ```
 
-The earliest eight scans are the whole 11-14 Electric Pulse night. TS002 shows
+The earliest eight scans are the whole 10-23 Electric Pulse night. TS002 shows
 up twice — the duplicate gate scan — and the last two straddle midnight (23:58
 on the show date, 00:04 the next calendar day). Sorting reordered rows; it
 removed nothing.
@@ -84,12 +84,12 @@ and no `is_free` column.
 
 ```text
 scan_id                 show       scanned_at
-  TS001       Electric Pulse 2025-11-14 19:39
+  TS001       Electric Pulse 2025-10-23 19:39
   TS005     Latin Fire Night 2025-11-15 19:39
-  TS009       Broadway Bites 2025-11-21 19:34
+  TS009       Broadway Bites 2025-11-16 19:34
   TS013 Midnight Comedy Hour 2025-11-22 19:38
-  TS017     Sunset Jazz Trio 2025-11-28 19:34
-  TS025       Electric Pulse 2025-12-06 19:39
+  TS017     Sunset Jazz Trio 2025-12-03 19:34
+  TS025       Electric Pulse 2025-12-04 19:39
 ```
 
 `step1` (the filter) is the six VIP scans; `step2` (the sort) orders them by

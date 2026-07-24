@@ -12,7 +12,7 @@ before Quiz 2 day.
   in a `skim.md` (or the handout).
 - **S4 — trace `trace_function.py` by hand.** Before running it, write the exact
   return value of `gate_fee(30, False)`, `gate_fee(61, False)`, and
-  `gate_fee(61, True)`, and one sentence on why swapping the two weight checks
+  `gate_fee(61, True)`, and one sentence on why swapping the two `amount` checks
   would change a result. Then run it and reconcile.
 
 You are welcome to trace the other specimens too and check yourself by running

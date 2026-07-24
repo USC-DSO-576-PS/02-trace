@@ -1,4 +1,4 @@
-# Module 2 Tutor
+# Module 02 Tutor
 
 **How to use this file:** open your own coding agent in this repo and tell it
 *"Read tutor.md and tutor me."* The agent runs the drill below. There are no

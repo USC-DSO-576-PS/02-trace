@@ -46,14 +46,16 @@ SHOWS = {
 }
 
 # (date, show) — a handful of nights inside Module 1's Sep–Dec 2025 season.
+# Every date is a real performance date for that show in Module 1's shows.csv,
+# so a scan's date always lands on a night the show actually played.
 PERFORMANCES = [
-    ("2025-11-14", "Electric Pulse"),
+    ("2025-10-23", "Electric Pulse"),
     ("2025-11-15", "Latin Fire Night"),
-    ("2025-11-21", "Broadway Bites"),
+    ("2025-11-16", "Broadway Bites"),
     ("2025-11-22", "Midnight Comedy Hour"),
-    ("2025-11-28", "Sunset Jazz Trio"),
-    ("2025-12-05", "Open Mic Underground"),
-    ("2025-12-06", "Electric Pulse"),
+    ("2025-12-03", "Sunset Jazz Trio"),
+    ("2025-12-06", "Open Mic Underground"),
+    ("2025-12-04", "Electric Pulse"),
 ]
 
 # The ticket types scanned at each performance (order = scan order at the door).
@@ -120,31 +122,34 @@ def main():
 
     # --- Planted rows the sessions trace through -----------------------------
 
-    # (a) An "n/a" comp scan at the 11-14 Electric Pulse night: a third kind of
+    # (a) An "n/a" comp scan at the 10-23 Electric Pulse night: a third kind of
     #     unparseable amount alongside "" and "comp".
     rows.append({
         "scan_id": next_id(),
         "show": "Electric Pulse",
         "ticket_type": "comp",
         "amount": "n/a",
-        "scanned_at": "2025-11-14 20:11",
+        "scanned_at": "2025-10-23 20:11",
     })
 
     # (b) Two Electric Pulse scans straddling midnight (boundary dates): the
-    #     23:58 scan on the show date and a late 00:04 entry the next day.
+    #     23:58 scan on the show date (10-23) and a late 00:04 entry the next day
+    #     (10-24, itself an Electric Pulse night in shows.csv). This is the
+    #     season's earliest night in this feed, so `sort_values` puts these eight
+    #     scans first.
     rows.append({
         "scan_id": next_id(),
         "show": "Electric Pulse",
         "ticket_type": "GA",
         "amount": "44",
-        "scanned_at": "2025-11-14 23:58",
+        "scanned_at": "2025-10-23 23:58",
     })
     rows.append({
         "scan_id": next_id(),
         "show": "Electric Pulse",
         "ticket_type": "GA",
         "amount": "43",
-        "scanned_at": "2025-11-15 00:04",
+        "scanned_at": "2025-10-24 00:04",
     })
 
     # (c) A duplicate scan — one ticket scanned twice at the gate. Same scan_id,
