@@ -30,6 +30,9 @@ class traces the *same* code. For each one:
    its own result**, so what it prints *is* the answer key — compare it against
    your paper trace. A mismatch means your trace has a bug to find; that is the
    whole exercise. There is no separate answers file: running is the self-check.
+   When your run differs from your trace and you can't see why, **work with the
+   tutor** (*"read tutor.md and tutor me"*) to locate the step that diverged —
+   learning to learn through an AI tutor is itself the skill.
 
 - **S3 — Skim a Pipeline:** read `raw → clean → summary` as named objects. Skim
   `ticket_scans.csv` and write one plain-English line per step (input object,
@@ -52,7 +55,7 @@ class traces the *same* code. For each one:
 | `unfamiliar_snippet.py` | ONE not-yet-taught construct (`value_counts`) for the ask-your-agent workflow. |
 | `HOMEWORK.md` | This week's homework: finish the Try blocks + the pull practice. |
 | `AGENTS.md` | House rules for any coding agent you point at this repo. |
-| `quiz-coach.md` | Drop-in instructions that turn your own agent into a Socratic Quiz 2 coach. |
+| `tutor.md` | Drop-in instructions that turn your own agent into your Module 2 tutor — Socratic quiz practice, handout-concept explanations, and guided debugging. |
 
 ## The data (`ticket_scans.csv`)
 

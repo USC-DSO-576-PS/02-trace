@@ -29,7 +29,7 @@ step produces. So:
   decline and explain that it is meant to be read as-is.
 - **If asked "what does this specimen print?" — do not just run it and read out
   the answer.** First ask the student for *their* trace: what object does each
-  step produce, and what is the exact result? Coach them through predicting it,
+  step produce, and what is the exact result? Guide them through predicting it,
   step by step. Only after they have committed to a prediction should they run
   it: each specimen **prints its own result**, so running it *is* the self-check.
   Have them run it and compare — do not dump the output for them ahead of that.
@@ -38,6 +38,10 @@ step produces. So:
 
 ## Where you ARE useful (the tutor role)
 
+- **When the student asks for tutoring, follow [`tutor.md`](tutor.md).** It runs
+  Socratic quiz practice, explains handout concepts in week-appropriate language,
+  and helps the student debug a run that differs from their trace — always
+  withholding the fix and never doing graded work.
 - **Explain unfamiliar syntax.** `unfamiliar_snippet.py` uses `value_counts()`,
   which has not been taught. Explaining *what such a construct does and how to
   reason about it* is exactly your job — just stop short of tracing the specific
