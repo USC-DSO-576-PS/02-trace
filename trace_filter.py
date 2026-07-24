@@ -1,7 +1,7 @@
 """trace_filter.py — ONE step: filter (a boolean mask selects rows).
 
 FROZEN specimen. Do not edit it. Trace it on paper first (what rows survive?),
-then run `python trace_filter.py` to confirm against expected_outputs.md.
+then run `python trace_filter.py` to confirm — what it prints is the answer key.
 
 The mask `scans["show"] == "Broadway Bites"` is a per-row True/False test. The
 filter keeps only the True rows. It changes WHICH rows remain; it does not

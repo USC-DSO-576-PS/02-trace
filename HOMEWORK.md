@@ -15,8 +15,9 @@ before Quiz 2 day.
   `gate_fee(61, True)`, and one sentence on why swapping the two weight checks
   would change a result. Then run it and reconcile.
 
-You are welcome to trace the other specimens too and check yourself against
-`expected_outputs.md` — but the two above are the ones to hand in.
+You are welcome to trace the other specimens too and check yourself by running
+each one (what it prints is the answer key) — but the two above are the ones to
+hand in.
 
 ## 2. Pull practice (the named extra)
 

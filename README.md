@@ -26,9 +26,10 @@ class traces the *same* code. For each one:
 
 1. **Predict on paper** — in the handout blanks, write what object each step
    produces and the exact result. Do not run it yet.
-2. **Run to confirm** — `python trace_filter.py` (etc.), then check against
-   [`expected_outputs.md`](expected_outputs.md). A mismatch means your trace has
-   a bug to find — that is the whole exercise.
+2. **Run to confirm** — `python trace_filter.py` (etc.). Each specimen **prints
+   its own result**, so what it prints *is* the answer key — compare it against
+   your paper trace. A mismatch means your trace has a bug to find; that is the
+   whole exercise. There is no separate answers file: running is the self-check.
 
 - **S3 — Skim a Pipeline:** read `raw → clean → summary` as named objects. Skim
   `ticket_scans.csv` and write one plain-English line per step (input object,
@@ -41,7 +42,6 @@ class traces the *same* code. For each one:
 | File | What it is |
 |---|---|
 | `ticket_scans.csv` | The raw gate-scan feed (one row per scan). The data every specimen reads. |
-| `generate_scans.py` | Seeded, deterministic generator for the CSV. Re-run it to restore the exact data. |
 | `trace_filter.py` | ONE step — filter (a mask selects rows). |
 | `trace_derive.py` | Clean `amount`, then ONE step — a derived column (`is_large_order`). |
 | `trace_sort.py` | ONE step — sort (reorder rows, same population). |
@@ -50,7 +50,6 @@ class traces the *same* code. For each one:
 | `trace_function.py` | A small function with **successive `if`** statements — check order is behavior. |
 | `trace_compose.py` | Type-hinted composition: `DataFrame -> Series -> float -> bool`. |
 | `unfamiliar_snippet.py` | ONE not-yet-taught construct (`value_counts`) for the ask-your-agent workflow. |
-| `expected_outputs.md` | Exact output of every specimen — your self-check key after tracing. |
 | `HOMEWORK.md` | This week's homework: finish the Try blocks + the pull practice. |
 | `AGENTS.md` | House rules for any coding agent you point at this repo. |
 | `quiz-coach.md` | Drop-in instructions that turn your own agent into a Socratic Quiz 2 coach. |
@@ -66,11 +65,6 @@ class traces the *same* code. For each one:
   the `amount >= 40` boundary; two scans straddle midnight. The specimens trace
   through this mess — that is the skill.
 
-Regenerate the data at any time with:
-
-```bash
-python generate_scans.py
-```
-
-It uses a fixed seed and the standard library only, so the file it writes is
-identical every time.
+`ticket_scans.csv` is committed and **frozen** — everyone traces the exact same
+data. Don't edit it; if a run ever looks off, check out the committed file again
+(`git checkout ticket_scans.csv`).

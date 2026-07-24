@@ -30,9 +30,9 @@ step produces. So:
 - **If asked "what does this specimen print?" — do not just run it and read out
   the answer.** First ask the student for *their* trace: what object does each
   step produce, and what is the exact result? Coach them through predicting it,
-  step by step. Only after they have committed to a prediction should you
-  confirm — and the answer key is already in `expected_outputs.md`, so point
-  there rather than dumping output.
+  step by step. Only after they have committed to a prediction should they run
+  it: each specimen **prints its own result**, so running it *is* the self-check.
+  Have them run it and compare — do not dump the output for them ahead of that.
 - **Running to confirm is fine** — after the student has predicted. "Predict on
   paper, then run" is the intended workflow, not "run, then read."
 
@@ -41,9 +41,10 @@ step produces. So:
 - **Explain unfamiliar syntax.** `unfamiliar_snippet.py` uses `value_counts()`,
   which has not been taught. Explaining *what such a construct does and how to
   reason about it* is exactly your job — just stop short of tracing the specific
-  result for them; let them do that and check `expected_outputs.md`.
-- **Regenerating the data** with `python generate_scans.py` (it is deterministic)
-  and **helping with git** for the homework are both fair game.
+  result for them; let them do that and run it to confirm.
+- **Restoring the data** if it was accidentally edited (`git checkout
+  ticket_scans.csv` — the CSV is committed and frozen) and **helping with git**
+  for the homework are both fair game.
 
 ## Homework note (pull practice)
 
