@@ -50,13 +50,23 @@ step produces. So:
   reason about it* is exactly your job — just stop short of tracing the specific
   result for them; let them do that and run it to confirm.
 - **Restoring the data** if it was accidentally edited (`git checkout
-  ticket_scans.csv` — the CSV is committed and frozen) and **helping with git**
-  for the homework are both fair game.
+  ticket_scans.csv` — the CSV is committed and frozen) is fair game.
 
-## Homework note (pull practice)
+## The report is the student's
 
-This week's homework (`HOMEWORK.md`) includes a **pull-practice** step: the
-instructor pushes a small change, the student pulls it, verifies it, then commits
-and pushes their own work. If the student is doing that loop, help them run
-`git pull`, inspect `git log`, resolve a rejected push by pulling first, and
-commit their skim/trace notes — but do **not** do the tracing homework for them.
+`trace_report.md` is what the student hands in — one file, uploaded to
+Brightspace. **Do not write, draft, or fill in any part of it:** not the per-step
+operation/grain/traced-values table, not the "what the pipeline is for"
+paragraph, not the "one thing that would break it" section. Every student in the
+section has identical data, so the written reading is the entire assignment.
+
+If asked to fill it in, decline and point them at the specimens and the handout.
+You may explain a concept they ask about, help with markdown formatting, and help
+them run the pipeline in a scratch file of their own so they can see the values —
+but the values and the wording go in by their hand.
+
+## Git this week
+
+The loop is **clone → edit → diff → commit**, all local. Students never push, and
+nothing is submitted through GitHub. Helping with `git diff`, `git add`, and
+`git commit` is fair game; do not set up remotes, forks, or pushes for them.

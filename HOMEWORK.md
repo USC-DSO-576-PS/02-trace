@@ -1,49 +1,48 @@
 # Module 2 homework
 
-Graded on completion and effort, not correctness (see the syllabus). Push it
-before Quiz 2 day.
+**Hand in one file: `trace_report.md`, uploaded to Brightspace before Quiz 2.**
+Nothing is submitted through GitHub. Graded on completion and effort, not
+correctness (see the syllabus).
 
-## 1. Finish the in-class Try blocks
+`trace_report.md` is the explainer you send a manager who inherited the scan
+pipeline and asked what it actually does. Start from the template in this repo.
 
-- **S3 — skim for the story.** For `ticket_scans.csv`, write one plain-English
-  line per step of the `read_csv → clean amount → filter invalid rows → derive
-  is_large_order → sort` pipeline: input object, action, output/grain, business
-  role. No exact arithmetic — this is the story, not the numbers. Put your lines
-  in a `skim.md` (or the handout).
-- **S4 — trace `trace_function.py` by hand.** Before running it, write the exact
-  return value of `gate_fee(30, False)`, `gate_fee(61, False)`, and
-  `gate_fee(61, True)`, and one sentence on why swapping the two `amount` checks
-  would change a result. Then run it and reconcile.
+## What to do
 
-You are welcome to trace the other specimens too and check yourself by running
-each one (what it prints is the answer key) — but the two above are the ones to
-hand in.
+1. **Trace the specimens on paper first.** Work through `trace_filter.py`,
+   `trace_derive.py`, `trace_sort.py`, `trace_copy.py`, `trace_chain.py`,
+   `trace_function.py`, and `trace_compose.py` in the handout blanks — what object
+   does each step produce, and what is the exact result?
 
-## 2. Pull practice (the named extra)
+2. **Run each one to confirm.** Every specimen prints its own result, so running
+   it *is* the answer key. Where your trace and the run differ, find the step that
+   diverged (the tutor helps you locate it — *"read tutor.md and tutor me"* — it
+   will not hand you the corrected trace).
 
-This is the one new mechanic this week: **pulling a teammate's change before you
-push your own.** Keep it simple.
+3. **Run the pipeline from handout §2.2** over `ticket_scans.csv` in a scratch
+   file of your own, and record what you see: row counts, which rows became `NaN`,
+   what happens at exactly 40, and the first rows of `summary`.
 
-1. Sometime before the quiz, the instructor pushes a small change to your repo —
-   a new frozen specimen (e.g. `trace_pull.py`) or a tweak to the data.
-2. **Pull it down:**
+4. **Fill in `trace_report.md`:**
+   - the per-step table — operation, object produced, grain, and the traced values
+     you actually saw;
+   - two values a reader would misread if nobody flagged them;
+   - two or three sentences in your own words on what the pipeline is for;
+   - one realistic thing that would break it, what you would see, and how you
+     would catch it;
+   - one line on what you would check before handing `summary` to someone who
+     will act on it.
 
-   ```bash
-   git pull
-   ```
+The traced values and the written paragraphs have to be yours. Everyone in the
+section has the same data, so the numbers alone prove nothing — the reading of
+them is the work.
 
-3. **Verify it landed:** `git log --oneline -3` should show the instructor's
-   commit; run any new specimen and check it against its expected output.
-4. **Do your own small work on top** — e.g. add your `skim.md` and your
-   hand-trace — then commit and push:
+## Working locally
 
-   ```bash
-   git add .
-   git commit -m "S3 skim + S4 hand-trace; pulled instructor change"
-   git push
-   ```
+```
+git diff                                 # the exact lines you changed
+git add .
+git commit -m "Module 2 trace notes"
+```
 
-That's the whole loop: **pull → verify → commit your work → push.** You named
-`pull`/`sync` in Session 1; this is the hands-on version. If the push is
-rejected because you had not pulled first, that rejection *is* the lesson — pull,
-then push again.
+Clone → edit → diff → commit, all on your own machine. You never push.

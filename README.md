@@ -3,48 +3,22 @@
 Welcome back to **Marquee on Vine**, the small live-events venue from Module 1.
 
 In Module 1 you read `shows.csv`: the *show-level* table, one clean row per
-performance with tickets sold, price, and refunds already totalled. Someone —
-or some agent — built that table. This week you look at what sits **underneath**
-it: `ticket_scans.csv`, the **raw feed from the door scanners**, one row per
-gate scan, before anyone cleaned it. Aggregate these scans by show and you would
-rebuild the shows.csv world. Your job this module is not to write that pipeline —
-it is to **trace** one, step by step, and always know exactly what object you
-hold.
+performance with tickets sold, price, and refunds already totalled. Someone — or
+some agent — built that table. This week you look at what sits **underneath** it:
+`ticket_scans.csv`, the **raw feed from the door scanners**, one row per gate
+scan, before anyone cleaned it.
 
-## The module's move
+Your manager inherited a short script that cleans and ranks those scans, and
+asked you a fair question: **what does it actually do?** Your job is not to write
+the pipeline — it is to **trace** it, step by step, and know exactly what object
+each step produces.
 
-Track table state **one step at a time** — filter, derived column, sort,
-independent copy — unpack a short **two-step method chain** into named steps,
-compose type-hinted calls, and read a small function with **successive `if`
-statements** for its exact behavior. (No `groupby` yet — that lands in Module 4.)
-
-## How to work through it (S3 → S4)
-
-**Trace on the handout FIRST, run to confirm SECOND.** Every specimen below is a
-**frozen** piece of agent-written code — nobody generates it live, so the whole
-class traces the *same* code. For each one:
-
-1. **Predict on paper** — in the handout blanks, write what object each step
-   produces and the exact result. Do not run it yet.
-2. **Run to confirm** — `python trace_filter.py` (etc.). Each specimen **prints
-   its own result**, so what it prints *is* the answer key — compare it against
-   your paper trace. A mismatch means your trace has a bug to find; that is the
-   whole exercise. There is no separate answers file: running is the self-check.
-   When your run differs from your trace and you can't see why, **work with the
-   tutor** (*"read tutor.md and tutor me"*) to locate the step that diverged —
-   learning to learn through an AI tutor is itself the skill.
-
-- **S3 — Skim a Pipeline:** read `raw → clean → summary` as named objects. Skim
-  `ticket_scans.csv` and write one plain-English line per step (input object,
-  action, output/grain, business role) — no exact arithmetic yet.
-- **S4 — Trace a Pipeline:** now trace exact values, types, and grain through the
-  specimens below.
-
-## File map
+## What's in this repo
 
 | File | What it is |
 |---|---|
-| `ticket_scans.csv` | The raw gate-scan feed (one row per scan). The data every specimen reads. |
+| `README.md` | This file — the setting and the steps. |
+| `ticket_scans.csv` | The data: the raw gate-scan feed, one row per scan. Columns: `scan_id`, `show`, `ticket_type` (GA / VIP / presale / comp), `amount` (raw text), `scanned_at`. |
 | `trace_filter.py` | ONE step — filter (a mask selects rows). |
 | `trace_derive.py` | Clean `amount`, then ONE step — a derived column (`is_large_order`). |
 | `trace_sort.py` | ONE step — sort (reorder rows, same population). |
@@ -53,21 +27,91 @@ class traces the *same* code. For each one:
 | `trace_function.py` | A small function with **successive `if`** statements — check order is behavior. |
 | `trace_compose.py` | Type-hinted composition: `DataFrame -> Series -> float -> bool`. |
 | `unfamiliar_snippet.py` | ONE not-yet-taught construct (`value_counts`) for the ask-your-agent workflow. |
-| `HOMEWORK.md` | This week's homework: finish the Try blocks + the pull practice. |
-| `AGENTS.md` | House rules for any coding agent you point at this repo. |
-| `tutor.md` | Drop-in instructions that turn your own agent into your Module 2 tutor — Socratic quiz practice, handout-concept explanations, and guided debugging. |
+| `trace_report.md` | The template for what you hand in. Fill it in and upload it to Brightspace. |
+| `AGENTS.md` | The house rules your coding agent follows in this repo. |
+| `tutor.md` | Instructions your own agent can read to tutor you for Quiz 2. |
 
 ## The data (`ticket_scans.csv`)
 
 - **Grain:** one row per gate scan.
-- **Columns:** `scan_id`, `show`, `ticket_type` (GA / VIP / presale / comp),
-  `amount` (raw text), `scanned_at` (timestamp).
 - **It is a raw feed, so it is messy on purpose:** some `amount` values are
   unparseable or blank (comp tickets logged as `comp`, `n/a`, or nothing); one
   ticket was scanned twice (a duplicate `scan_id`); one presale sits exactly on
-  the `amount >= 40` boundary; two scans straddle midnight. The specimens trace
-  through this mess — that is the skill.
+  the `amount >= 40` boundary; two scans straddle midnight.
 
 `ticket_scans.csv` is committed and **frozen** — everyone traces the exact same
 data. Don't edit it; if a run ever looks off, check out the committed file again
 (`git checkout ticket_scans.csv`).
+
+## The steps
+
+### 1. Clone
+
+```
+git clone https://github.com/USC-DSO-576-PS/02-trace.git
+cd 02-trace
+```
+
+Open the folder in VS Code. This repo is public and read-only to you: you clone
+once, work locally, and never push.
+
+### 2. Trace on paper first, run to confirm
+
+Every `trace_*.py` file is a **frozen** piece of agent-written code — nobody
+generates it live, so the whole class traces the *same* code. For each one:
+
+1. **Predict** — in the handout blanks, write what object each step produces and
+   the exact result. Do not run it yet.
+2. **Run to confirm** — `python trace_filter.py` (and so on). Each specimen
+   **prints its own result**, so what it prints *is* the answer key. Compare it
+   against your paper trace. A mismatch means your trace has a bug to find; that
+   is the whole exercise.
+
+There is no separate answers file: running is the self-check. When your run
+differs from your trace and you can't see why, **work with the tutor** (*"read
+tutor.md and tutor me."*) to locate the step that diverged — learning to learn
+through an AI tutor is itself the skill.
+
+### 3. Run the pipeline your report explains
+
+The pipeline in the handout (§2.2) is the one your manager asked about:
+
+```python
+raw       = pd.read_csv("ticket_scans.csv")
+clean     = raw.copy()
+clean["paid"] = pd.to_numeric(clean["amount"], errors="coerce")
+paid_only = clean[clean["paid"].notna()].copy()
+paid_only["is_large_order"] = paid_only["paid"] >= 40
+summary   = paid_only.sort_values("paid", ascending=False)
+```
+
+Run it over `ticket_scans.csv` yourself — in a scratch `.py` file of your own —
+and record what you see at each step: the row counts, which rows became `NaN`,
+what happens at exactly 40, and the first rows of `summary`. Those are the traced
+values your report needs.
+
+### 4. Diff and commit
+
+```
+git diff                                 # the exact lines you changed
+git add .
+git commit -m "Module 2 trace notes"
+```
+
+That is the weekly loop: **clone → edit → diff → commit**, all on your own
+machine. `push` and `pull` send commits to and from a shared remote — worth
+knowing as a professional, but this course never asks you to push.
+
+## Homework
+
+Fill in **`trace_report.md`** and **upload it to Brightspace before Quiz 2.** It
+is the one thing you hand in for this module. Nothing is submitted through
+GitHub.
+
+The report is what you would send a manager who asked what the inherited script
+does: one row per step with the operation, the grain of the table it produces,
+and the traced values you saw; two or three sentences in your own words on what
+the pipeline is for; and one thing that would break it. The traced values and the
+plain-English paragraph have to be yours — don't have an agent write them.
+
+To practice for the quiz, tell your agent: *"Read tutor.md and tutor me."*

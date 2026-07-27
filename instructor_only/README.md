@@ -3,8 +3,8 @@
 # instructor_only/ — Module 2
 
 Material that backs the trace exercise but must **never ship to students**. When
-the `02-trace-template` GitHub repo is built from `repo/`, this folder is left
-out. In particular, `expected_outputs.md` is the **solution key** — the whole
+the public repo `USC-DSO-576-PS/02-trace` is built from `repo/`, this folder is
+stripped. In particular, `expected_outputs.md` is the **solution key** — the whole
 point of the module is that students trace on paper and confirm by *running* the
 specimens (each one prints its own result), not by reading printed answers.
 
