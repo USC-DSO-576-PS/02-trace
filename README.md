@@ -47,13 +47,28 @@ data. Don't edit it; if a run ever looks off, check out the committed file again
 
 ### 1. Clone
 
+You already have the `dso576` folder from Module 1 — go into it and clone this
+module beside Module 1's.
+
+**Mac** — open **Terminal**:
+
 ```
+cd ~/dso576
 git clone https://github.com/USC-DSO-576-PS/02-trace.git
 cd 02-trace
 ```
 
-Open the folder in VS Code. This repo is public and read-only to you: you clone
-once, work locally, and never push.
+**Windows** — open **Command Prompt**:
+
+```
+cd %USERPROFILE%\dso576
+git clone https://github.com/USC-DSO-576-PS/02-trace.git
+cd 02-trace
+```
+
+Lost? `pwd` (Mac) or `cd` with nothing after it (Windows) prints where you are.
+Then open the `02-trace` folder in VS Code. You clone once, work locally, and
+never push.
 
 ### 2. Trace on paper first, run to confirm
 
