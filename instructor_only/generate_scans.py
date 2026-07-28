@@ -1,9 +1,9 @@
 """Generate ticket_scans.csv — the raw gate-scan feed for Marquee on Vine.
 
-Module 1's `shows.csv` was the *show-level* table: one row per performance,
+The venue's reporting runs off a *show-level* table: one row per performance,
 already cleaned and totalled. THIS file is what sits underneath it — the raw
 feed from the door scanners: **one row per gate scan**, before anyone cleaned
-it up. Aggregate these scans by show and you would rebuild the shows.csv world.
+it up. Aggregate these scans by show and you would rebuild that show-level view.
 
 Run this to (re)create ticket_scans.csv. It is fully deterministic (fixed seed,
 no external input), so every student's copy is byte-for-byte identical and every
@@ -45,9 +45,9 @@ SHOWS = {
     "Open Mic Underground": 15,
 }
 
-# (date, show) — a handful of nights inside Module 1's Sep–Dec 2025 season.
-# Every date is a real performance date for that show in Module 1's shows.csv,
-# so a scan's date always lands on a night the show actually played.
+# (date, show) — a handful of nights inside the venue's Sep–Dec 2025 season.
+# Each show plays only on its own listed dates, so a scan's date always lands on
+# a night that show actually played.
 PERFORMANCES = [
     ("2025-10-23", "Electric Pulse"),
     ("2025-11-15", "Latin Fire Night"),
@@ -134,7 +134,7 @@ def main():
 
     # (b) Two Electric Pulse scans straddling midnight (boundary dates): the
     #     23:58 scan on the show date (10-23) and a late 00:04 entry the next day
-    #     (10-24, itself an Electric Pulse night in shows.csv). This is the
+    #     (10-24, itself an Electric Pulse night on the calendar). This is the
     #     season's earliest night in this feed, so `sort_values` puts these eight
     #     scans first.
     rows.append({

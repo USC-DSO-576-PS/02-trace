@@ -1,11 +1,11 @@
 # Module 2 — Trace a Table Transformation
 
-Welcome back to **Marquee on Vine**, the small live-events venue from Module 1.
+This week's client is **Marquee on Vine**, a small live-events venue in LA.
 
-In Module 1 you read `shows.csv`: the *show-level* table, one clean row per
-performance with tickets sold, price, and refunds already totalled. Someone — or
-some agent — built that table. This week you look at what sits **underneath** it:
-`ticket_scans.csv`, the **raw feed from the door scanners**, one row per gate
+Their reporting runs off a *show-level* table: one clean row per performance,
+with tickets sold, price, and refunds already totalled. Someone — or some agent —
+built that table. Your job starts one level **underneath** it, at
+`ticket_scans.csv`: the **raw feed from the door scanners**, one row per gate
 scan, before anyone cleaned it.
 
 Your manager inherited a short script that cleans and ranks those scans, and
@@ -48,7 +48,7 @@ data. Don't edit it; if a run ever looks off, check out the committed file again
 ### 1. Clone
 
 You already have the `dso576` folder from Module 1 — go into it and clone this
-module beside Module 1's.
+module beside `01-onboard`.
 
 **Mac** — open **Terminal**:
 

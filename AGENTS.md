@@ -2,8 +2,8 @@
 
 This is a **DSO-576 student repo** for Module 2, *Trace a Table Transformation*.
 Domain: **Marquee on Vine**, a small LA live-events venue. `ticket_scans.csv` is
-the raw gate-scan feed (one row per scan) sitting underneath Module 1's
-show-level `shows.csv`.
+the raw gate-scan feed — one row per scan — that the venue's clean, show-level
+reporting table is built from.
 
 If you are a coding agent a student has pointed at this repo, follow these rules.
 
