@@ -1,0 +1,6 @@
+[project]
+name = "marquee-door-reports"
+version = "0.1.0"
+description = "Box office door-take reporting off the raw scanner feed"
+requires-python = ">=3.11"
+dependencies = ["pandas>=2.0"]

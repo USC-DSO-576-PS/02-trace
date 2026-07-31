@@ -4,7 +4,7 @@ Keeps the scans that carry a paid amount, flags the large orders, and ranks
 everything high to low so the box office can read the top of the list at a
 glance. Run it from the repo root:
 
-    python door_report.py
+    uv run python door_report.py
 
 Written for the fall season wrap, rerun each period since.  -- R. Salas
 """

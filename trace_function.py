@@ -15,5 +15,6 @@ def gate_fee(amount, comp):
     return fee
 
 
-for amount, comp in [(30, False), (61, False), (61, True)]:
-    print(f"gate_fee({amount}, {comp}) -> {gate_fee(amount, comp)}")
+print("gate_fee(30, False) ->", gate_fee(30, False))
+print("gate_fee(61, False) ->", gate_fee(61, False))
+print("gate_fee(61, True) ->", gate_fee(61, True))
