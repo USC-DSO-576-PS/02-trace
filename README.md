@@ -34,6 +34,7 @@ Nobody has worked out which figure the venue should be quoting.
 | `unfamiliar_snippet.py` | A sanity check on the feed's `scan_id`s. |
 | `trace_report.md` | The template for what you hand in. Fill it in and upload it to Brightspace. |
 | `pyproject.toml` | Declares the repo's one dependency (pandas) so `uv run python <file>` just works. |
+| `uv.lock` | Pins the exact dependency versions `uv run` installs — everyone runs the same pandas. |
 | `AGENTS.md` | The house rules a coding agent follows in this repo. |
 | `tutor.md` | Instructions your own agent can read to tutor you for Quiz 2. |
 
