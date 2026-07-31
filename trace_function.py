@@ -1,15 +1,6 @@
-"""trace_function.py — a small function with SUCCESSIVE `if` statements.
+"""The per-scan handling fee the box office charges at the gate.
 
-FROZEN specimen. Do not edit it. Predict each printed result on paper first,
-then run to confirm.
-
-`gate_fee` is the per-scan handling fee the box office charges. Note these are
-successive `if`s, NOT `elif`: every `if` runs in order, so a later check can
-overwrite an earlier result. The ORDER of the checks is part of the behavior.
-
-  * amount == 30 -> `30 > 30` is False, so `fee` stays 2 (the boundary excludes 30)
-  * amount == 61 -> `> 30` sets 4, then `> 60` overwrites it to 7 (both run)
-  * comp == True -> the last `if` resets `fee` to 0, whatever it was before
+Prints the fee for a few representative scans.
 """
 
 

@@ -1,18 +1,6 @@
-"""trace_compose.py — compose type-hinted calls: DataFrame -> Series -> float -> bool.
+"""Do VIP scans clear the $40 large-order line on average?
 
-FROZEN specimen. Do not edit it. Trace it inside-out on paper first, then run.
-
-Read each signature as an intended interface and check the types fit at each
-boundary:
-
-    gate_amounts(vip)        DataFrame -> Series   (the VIP amounts, as numbers)
-    average(<that Series>)   Series    -> float    (their mean, wrapped to float)
-    above(<that float>, 40)  float     -> bool     (mean >= 40 ?)
-
-`float(...)` and `bool(...)` make each pandas scalar match the declared return
-type. The Series from `gate_amounts` fits `average`'s parameter; the float from
-`average` fits `above`'s first parameter. Trace the compatible call to its exact
-runtime value.
+Split into small typed helpers so the season report can reuse the pieces.
 """
 
 import pandas as pd

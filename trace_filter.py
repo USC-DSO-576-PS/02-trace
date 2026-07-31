@@ -1,11 +1,7 @@
-"""trace_filter.py — ONE step: filter (a boolean mask selects rows).
+"""Broadway Bites door list, pulled out of the gate feed.
 
-FROZEN specimen. Do not edit it. Trace it on paper first (what rows survive?),
-then run `python trace_filter.py` to confirm — what it prints is the answer key.
-
-The mask `scans["show"] == "Broadway Bites"` is a per-row True/False test. The
-filter keeps only the True rows. It changes WHICH rows remain; it does not
-change the grain — the result is still one row per gate scan.
+One show's scans, so the box office can check that night against the printed
+manifest.
 """
 
 import pandas as pd

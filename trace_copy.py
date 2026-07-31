@@ -1,12 +1,6 @@
-"""trace_copy.py — a working table is INDEPENDENT of its source.
+"""Open Mic Underground amounts, raw and cleaned side by side.
 
-FROZEN specimen. Do not edit it. Trace it on paper first, then run to confirm.
-
-`working = source.copy()` makes a separate DataFrame. Cleaning `amount` and
-adding an `is_free` column on `working` changes ONLY `working`. `source` keeps
-its original text `amount` and never gains `is_free`. Compare the two prints:
-same rows, different columns and values — because they are two independent
-objects, not two names for one table.
+The numeric conversion runs on a working copy; both tables get printed.
 """
 
 import pandas as pd

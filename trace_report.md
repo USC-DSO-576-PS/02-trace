@@ -1,15 +1,21 @@
-# What this pipeline does — `ticket_scans.csv`
+# What `door_report.py` does — and which door take to trust
 
-**To:** Operations Manager, The Marquee on Vine
+**To:** Operations Manager, Marquee on Vine
 **From:** <!-- your name -->
 **Date:** <!-- today's date -->
-**Re:** The inherited scan-cleaning script — what it actually does
+**Re:** The inherited scan-cleaning script, and the $1,151 / $1,195 gap
+
+<!-- This report is the one thing you hand in for Module 2. Fill in every
+section, then upload this file to Brightspace before Quiz 2. Nothing is
+submitted through GitHub. The wording has to be yours: write it yourself, and
+use values you traced and confirmed by running the code rather than any you were
+handed. -->
 
 ---
 
 ## 1. The pipeline, step by step
 
-The script we inherited is this:
+`door_report.py` is the script we inherited. Its pipeline is these six lines:
 
 ```python
 raw       = pd.read_csv("ticket_scans.csv")
@@ -34,21 +40,35 @@ count, the values in a column, the first rows of the result.
 | 5 | `paid_only["is_large_order"] = ...` | <!-- fill this in --> | `paid_only` | <!-- fill this in --> | <!-- fill this in: how many True? what happens at exactly 40? --> |
 | 6 | `summary = ...sort_values(...)` | <!-- fill this in --> | `summary` | <!-- fill this in --> | <!-- fill this in: the first three scan_ids and their paid values --> |
 
-<!-- Say where each traced value came from — which specimen you ran, or the
-pipeline itself. The numbers have to be ones you saw. -->
-
-### Two values worth pointing at
-
-<!-- Pick two specific rows or numbers from the traced values above that a reader
-would misread if nobody flagged them. State the value, and what it means. One or
-two sentences each. -->
-
-1. <!-- fill this in -->
-2. <!-- fill this in -->
+<!-- Say where each traced value came from — which file you ran, or the pipeline
+itself. The numbers have to be ones you saw. -->
 
 ---
 
-## 2. What the pipeline is for
+## 2. Which door take to trust
+
+The script prints **$1,195** for the period. Finance closes the same period at
+**$1,151**. This section is the reason the manager asked for the report at all,
+so answer it plainly and in your own words.
+
+**The figure the venue should quote.** <!-- Name ONE number, in one sentence. -->
+
+**Why — what causes the gap.** <!-- What is it about the data or the pipeline
+that makes the two figures differ? Name the specific rows or step involved, and
+say how you found them: what you traced, what you ran, what it showed. Two to
+four sentences. -->
+
+**The check that settles it.** <!-- Give the one thing a reader could run or
+look at that turns your explanation from plausible into proved. Say what it
+shows. -->
+
+**One more thing to flag.** <!-- `summary` has a row count. State plainly what
+that count is a count *of* — and what it is not — so nobody downstream reads it
+as something it isn't. One or two sentences. -->
+
+---
+
+## 3. What the pipeline is for
 
 <!-- Two or three sentences, in plain English, in YOUR words — not a restatement
 of the code. What business question does `summary` answer, and who would use it?
@@ -58,12 +78,12 @@ Do not have an agent write this paragraph. -->
 
 ---
 
-## 3. One thing that would break it
+## 4. One thing that would break it
 
-<!-- Name ONE realistic change — to the data, the column names, or the thresholds
-— that would make this pipeline give a wrong or misleading answer without
-raising an error. Then say what you would see if it happened, and how you would
-notice. -->
+<!-- Name ONE realistic change — to the data, the column names, or the
+thresholds — that would make this pipeline give a wrong or misleading answer
+without raising an error. Then say what you would see if it happened, and how
+you would notice. -->
 
 **What would break it.** <!-- fill this in -->
 
@@ -73,7 +93,7 @@ notice. -->
 
 ---
 
-## 4. Confidence
+## 5. Confidence
 
 <!-- One line. How much would you stake on `summary` being right today, and what
 would you check before handing it to someone who will act on it? -->
