@@ -29,10 +29,20 @@ room_revenue = stays["nights"] * stays["nightly_rate"]
 room_revenue
 
 
+# %% A comparison creates labeled True/False values
+long_stay = stays["nights"] >= 2
+long_stay
+
+
+# %% Row selection keeps the labels marked True
+eligible = stays.loc[long_stay]
+eligible
+
+
 # %% Named steps
 working = stays.copy()
 working["room_revenue"] = room_revenue
-eligible = working.loc[working["nights"] >= 2]
+eligible = working.loc[long_stay]
 ranked = eligible.sort_values("room_revenue", ascending=False)
 result = ranked[["booking_id", "room_revenue"]]
 result
