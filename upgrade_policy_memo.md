@@ -1,6 +1,7 @@
 # Complimentary-upgrade policy memo
 
-Answer in your own words. Short and specific beats long.
+Answer in your own words. Short and specific beats long. Leave every comment
+prompt in place and write your response on the blank line directly beneath it.
 
 ## What the program returns
 
