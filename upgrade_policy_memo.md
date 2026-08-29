@@ -1,26 +1,23 @@
 # Complimentary-upgrade policy memo
 
-**To:** Front-Office Manager, Harbor House  
-**Date:** <!-- today's date -->  
-**Subject:** Rule used for complimentary-upgrade offers
-
 ## What the program returns
 
-<!-- In one manager-readable sentence, name the exact guests selected by the
-supplied call. -->
+<!-- For rooms_available = 2, state the exact guest IDs returned, in order,
+and how many offers the program makes. -->
 
-## Grain
+## What one row represents
 
-<!-- State what one input row and one output row represent. -->
+<!-- State what one input row represents and what one output row represents. -->
 
-## The rule implemented
+## Rule and assumption
 
-<!-- Explain how the program ranks candidates and which displayed
-considerations it ignores. -->
+<!-- Explain the ranking rule and what ranked.loc[: rooms_available - 1]
+assumes about row labels and positions. -->
 
-## Possible business consequence
+## Business consequence
 
-<!-- Give one concrete way this rule could conflict with hotel priorities. -->
+<!-- Give one concrete consequence when the number of offers differs from the
+number of rooms available. -->
 
 ## Question for the manager
 

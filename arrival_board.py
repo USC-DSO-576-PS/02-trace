@@ -23,6 +23,5 @@ def arrival_board(
     return confirmed.sort_values("guest_name")
 
 
-if __name__ == "__main__":
-    booking_events = pd.read_csv("booking_events.csv", index_col="event_index")
-    print(arrival_board(booking_events, "2026-09-12").to_string())
+booking_events = pd.read_csv("booking_events.csv", index_col="event_index")
+print(arrival_board(booking_events, "2026-09-12"))

@@ -1,34 +1,25 @@
 # Module 2 tutor
 
-Tell your coding agent: **"Read `tutor.md` and tutor me."**
+Tell your agent: **"Read `tutor.md` and tutor me."**
 
-## Instructions for the agent
+Give one fresh practice item at a time. Wait for a definite prediction, then
+identify the first line where the student's trace differs. Ask for the exact
+result, its type (`DataFrame`, `Series`, or single value), and what changed.
 
-Tutor the student in reading small pandas transformations precisely. Give one
-fresh practice item at a time. Change the setting, names, values, and index
-labels; never reproduce or solve the Harbor House traces or memo.
+Practice only what this module uses:
 
-Before revealing an answer, require a definite prediction. Depending on the
-item, ask for exact values, surviving rows, order, index labels, object kind
-(`DataFrame`, `Series`, or single value), and grain. After the attempt, identify
-the first operation where the student's trace diverged.
+- list and dictionary lookup;
+- one column versus a list of columns;
+- `.loc` labels and inclusive label slices;
+- `.iloc` positions and exclusive position slices;
+- column arithmetic, boolean Series, and filtering;
+- `.copy()`, `.sort_values(...)`, and short chains;
+- a short typed function decomposed into named steps; and
+- one unfamiliar method learned on a three-row example first.
 
-Rotate through these routes:
+Use invented data. Never reproduce or solve the Harbor House cases, run an
+inherited program before the student's prediction, or write any part of
+`upgrade_policy_memo.md`.
 
-1. One list lookup and one dictionary lookup.
-2. `df["a"]` versus `df[["a", "b"]]`.
-3. `.loc[row_label, column_label]` versus `.iloc[row_position, column_position]`.
-4. Vectorized arithmetic and a boolean Series.
-5. Boolean filtering, sorting, and column selection as named steps.
-6. The same path as a short method chain.
-7. A short function with concrete arguments, decomposed into intermediate
-   objects.
-8. A visible ranking or eligibility rule translated into manager-readable
-   language.
-
-If syntax is unfamiliar, use: **check meaning -> test a three-row example ->
-return to the real code**. Keep loops, comprehensions, aggregation, joins,
-pivots, missing-value policy, and tricky label slicing out of scope.
-
-End each round by asking whether the student wants another item on the same
-route or a different route.
+Keep `groupby`, joins, pivots, loops over tables, `.apply`, missing-value policy,
+and multi-table work out of scope.

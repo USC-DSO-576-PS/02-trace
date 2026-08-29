@@ -12,16 +12,15 @@ def upgrade_offers(
         ascending=False,
     )
 
-    offers = ranked.iloc[:rooms_available]
+    offers = ranked.loc[: rooms_available - 1]
 
     return offers[
         ["guest_id", "tier_points", "checked_in_at", "stay_nights"]
     ]
 
 
-if __name__ == "__main__":
-    upgrade_candidates = pd.read_csv(
-        "upgrade_candidates.csv",
-        index_col="candidate_index",
-    )
-    print(upgrade_offers(upgrade_candidates, 2).to_string())
+upgrade_candidates = pd.read_csv(
+    "upgrade_candidates.csv",
+    index_col="candidate_index",
+)
+print(upgrade_offers(upgrade_candidates, 2))
