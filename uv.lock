@@ -14,7 +14,7 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "marquee-front-of-house"
+name = "harbor-house-front-office"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

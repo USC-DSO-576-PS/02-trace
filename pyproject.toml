@@ -1,6 +1,6 @@
 [project]
-name = "marquee-front-of-house"
+name = "harbor-house-front-office"
 version = "0.1.0"
-description = "Will-call board and comp-upgrade offers off the box-office hold data"
+description = "Harbor House arrival-board and upgrade-offer traces"
 requires-python = ">=3.11"
 dependencies = ["pandas>=2.0"]

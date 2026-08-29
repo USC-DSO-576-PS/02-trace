@@ -1,0 +1,7 @@
+event_index,booking_id,guest_name,arrival_date,status,room_type,updated_at
+8,B14,Ana Cruz,2026-09-12,confirmed,king,09:05
+3,B08,Eli Park,2026-09-12,confirmed,queen,09:20
+6,B14,Ana Cruz,2026-09-13,confirmed,king,10:10
+1,B21,Mina Shah,2026-09-12,pending,queen,10:30
+9,B08,Eli Park,2026-09-12,cancelled,queen,11:15
+4,B21,Mina Shah,2026-09-12,confirmed,queen,12:00
