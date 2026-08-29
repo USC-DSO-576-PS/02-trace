@@ -17,6 +17,6 @@ def current_will_call(events: pd.DataFrame, show_date: str) -> pd.DataFrame:
     return confirmed.sort_values("guest")
 
 
-events = pd.read_csv("hold_events.csv")
+events = pd.read_csv("hold_events.csv", index_col="event_id")
 
 print(current_will_call(events, "2026-11-14"))

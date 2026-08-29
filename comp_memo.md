@@ -1,32 +1,28 @@
 # Comp offers memo
 
-**To:** house manager · **From:** (your name) · **Re:** `comp_offers.py`
+A short memo to the house manager about `comp_offers.py`. Answer each heading
+in your own words — short and specific beats long. Leave the comments in
+place; they are the instructions.
 
-Answer each heading in your own words. Short and specific beats long.
+## What the program returns
 
-## 1. What the program does
+<!-- One manager-readable sentence: which holds get an offer tonight
+(comp_seats = 3), in order. -->
 
-(One manager-readable sentence.)
+## Grain
 
-## 2. Grain
+<!-- What is one row of the input table? What is one row of the output? -->
 
-(What is one row of the input? What is one row of the output?)
+## The rule implemented
 
-## 3. The offers for `comp_seats = 3`
+<!-- How does the program decide who is offered a seat? Include the
+qualifying step, the ranking, and how ties are broken. -->
 
-(Which holds does it return, in order?)
+## Possible business consequence
 
-## 4. The assumption
+<!-- One concrete way tonight's offers could go wrong for the venue, based
+on your trace. -->
 
-(What does the line `ranked.loc[: comp_seats - 1]` assume about the hold
-numbers?)
+## Question for the house manager
 
-## 5. What can go wrong
-
-(If that assumption fails — too many offers, or too few? What does each cost
-the venue?)
-
-## 6. To revisit with the house manager
-
-(What operation or policy should be revisited — and is `comp_seats` meant to
-cap seats or rows?)
+<!-- One question to settle before anyone changes the code. -->

@@ -27,8 +27,8 @@ Rotate through these routes:
    slice with one position slice (a label slice includes its endpoint; a
    position slice stops before it).
 5. **One table step.** A derived column, a boolean mask, a filter, a sort, or
-   an independent `.copy()`. Ask for the exact object, values, row labels,
-   order, and grain afterward.
+   an independent `.copy()`. Ask for the type (DataFrame, Series, or single
+   value), exact values, row labels, order, and grain afterward.
 6. **Named steps, then the chain.** Unpack a two- or three-step chain into
    named intermediate objects, then give the exact final rows and order.
 7. **Make a function observable.** Give a short typed function (filter → sort

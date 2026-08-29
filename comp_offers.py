@@ -1,10 +1,11 @@
-# Prints tonight's comp-upgrade offers: best members first, one offer per seat.
+# Prints tonight's comp-upgrade offers: best qualifying members first.
 
 import pandas as pd
 
 
 def comp_offers(candidates: pd.DataFrame, comp_seats: int) -> pd.DataFrame:
-    ranked = candidates.sort_values(
+    qualified = candidates.loc[candidates["member_points"] >= 500]
+    ranked = qualified.sort_values(
         ["member_points", "arrived_at"],
         ascending=[False, True],
     )
