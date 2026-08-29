@@ -1,6 +1,6 @@
 [project]
-name = "marquee-door-reports"
+name = "marquee-front-of-house"
 version = "0.1.0"
-description = "Box office door-take reporting off the raw scanner feed"
+description = "Will-call board and comp-upgrade offers off the box-office hold data"
 requires-python = ">=3.11"
 dependencies = ["pandas>=2.0"]
