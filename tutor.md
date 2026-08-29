@@ -12,7 +12,7 @@ Practice only what this module uses:
 - one column versus a list of columns;
 - `.loc` labels and inclusive label slices;
 - `.iloc` positions and exclusive position slices;
-- comparison -> labeled True/False Series -> keep the rows marked True;
+- comparison -> labeled True/False Series -> direct `df[mask]` row filtering;
 - `.copy()`, `.sort_values(...)`, and short chains;
 - a short typed function decomposed into named steps; and
 - one unfamiliar method learned on a three-row example first.

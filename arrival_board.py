@@ -11,16 +11,15 @@ def arrival_board(
 
     current = ordered.drop_duplicates("booking_id")
 
-    on_date = current.loc[
-        current["arrival_date"] == report_date
-    ].copy()
+    on_date = current[current["arrival_date"] == report_date].copy()
 
-    confirmed = on_date.loc[
-        on_date["status"] == "confirmed",
-        ["booking_id", "guest_name", "room_type", "updated_at"],
+    confirmed = on_date[on_date["status"] == "confirmed"]
+
+    result = confirmed[
+        ["booking_id", "guest_name", "room_type", "updated_at"]
     ]
 
-    return confirmed.sort_values("guest_name")
+    return result.sort_values("guest_name")
 
 
 booking_events = pd.read_csv("booking_events.csv", index_col="event_index")

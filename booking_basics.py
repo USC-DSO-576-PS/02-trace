@@ -35,14 +35,14 @@ long_stay
 
 
 # %% Row selection keeps the labels marked True
-eligible = stays.loc[long_stay]
+eligible = stays[long_stay]
 eligible
 
 
 # %% Named steps
 working = stays.copy()
 working["room_revenue"] = room_revenue
-eligible = working.loc[long_stay]
+eligible = working[long_stay]
 ranked = eligible.sort_values("room_revenue", ascending=False)
 result = ranked[["booking_id", "room_revenue"]]
 result
@@ -50,7 +50,7 @@ result
 
 # %% The same path as a chain
 same_result = (
-    working.loc[working["nights"] >= 2]
+    working[working["nights"] >= 2]
     .sort_values("room_revenue", ascending=False)
     [["booking_id", "room_revenue"]]
 )
