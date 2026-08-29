@@ -1,41 +1,40 @@
-# Marquee on Vine — box office
+# Harbor House - front office
 
-Marquee on Vine is a small live-events venue off Hollywood Boulevard. This is
-the box office's working repo and the DSO-576 Module 2 repo.
+Harbor House is a small hotel. Each afternoon, the front-office manager needs
+an accurate arrival board and a short list of guests to receive the available
+complimentary upgrades.
 
-The raw door-scanner feed is `ticket_scans.csv`, one row per gate scan before
-anyone cleaned or reconciled it. `door_report.py` is the inherited program the
-last analyst left behind. It cleans the amounts, keeps paid scans, flags large
-orders, sorts the result, and prints the period's headline numbers.
-
-Finance closes the same period at **$3,832**. The program reports **$3,876**.
-Nobody has reconciled the **$44 difference** or decided which figure the venue
-should quote.
+The analyst who wrote the two functions is no longer available. Both programs
+run and produce plausible tables. Your job is to predict each intermediate
+object, confirm your trace, and explain the business rule the code implements.
 
 ## Files
 
-| File | What it is |
+| File | Purpose |
 |---|---|
-| `trace_lab.py` | The ordered `# %%` lab. Predict each cell, run it, and inspect the result before moving on. |
-| `door_report.py` | The inherited program you will read and investigate. |
-| `ticket_scans.csv` | The raw feed: `scan_id`, `show`, `ticket_type`, `amount`, `scanned_at`. |
-| `door_take_memo.md` | The one-file business deliverable you complete and upload to Brightspace. |
-| `AGENTS.md` | Standing rules for coding agents working in this repo. |
-| `tutor.md` | Instructions for asking your own agent to tutor you. |
+| `booking_basics.py` | Ordered Session 3 `# %%` practice. |
+| `arrival_board.py` | Inherited function traced with the class. |
+| `booking_events.csv` | Booking-update log, one row per update. |
+| `upgrade_offers.py` | Independent function for the upgrade decision. |
+| `upgrade_candidates.csv` | Eligible guests, one row per candidate. |
+| `upgrade_policy_memo.md` | Manager-facing artifact uploaded to Brightspace. |
+| `AGENTS.md` | Standing rules for coding agents in this repo. |
+| `tutor.md` | Socratic practice instructions for your agent. |
 | `pyproject.toml`, `uv.lock` | The pandas environment used by `uv run`. |
 
-## Run the two Python files
+## Run the files
 
-Open the whole folder in VS Code. In `trace_lab.py`, put the cursor in a cell,
-write down your prediction, and press **Shift+Enter** to run that cell. Read the
-cells from top to bottom.
+Open the whole folder in VS Code. In `booking_basics.py`, put the cursor in a
+cell, write down your prediction, and press **Shift+Enter**. Read the cells from
+top to bottom.
 
-Run the inherited program from the terminal:
+After you have committed to a paper trace, run the inherited files from the
+terminal:
 
 ```text
-uv run python door_report.py
+uv run python arrival_board.py
+uv run python upgrade_offers.py
 ```
 
-The data has 120 rows from fourteen performances between September and
-December 2025. Its grain is one row per scanner event—not one row per person,
-ticket sold, or show.
+The programs print final results as a self-check. The handout holds the trace
+procedure and the complete artifact requirements.

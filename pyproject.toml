@@ -1,6 +1,6 @@
 [project]
-name = "marquee-door-reports"
+name = "harbor-house-front-office"
 version = "0.1.0"
-description = "Box office door-take reporting off the raw scanner feed"
+description = "Harbor House arrival-board and upgrade-offer traces"
 requires-python = ">=3.11"
 dependencies = ["pandas>=2.0"]

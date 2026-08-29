@@ -14,7 +14,7 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "marquee-door-reports"
+name = "harbor-house-front-office"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
