@@ -1,5 +1,7 @@
 # Complimentary-upgrade policy memo
 
+Answer in your own words. Short and specific beats long.
+
 ## What the program returns
 
 <!-- For rooms_available = 2, state the exact guest IDs returned, in order,

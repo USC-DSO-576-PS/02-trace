@@ -8,17 +8,12 @@ def arrival_board(
     report_date: str,
 ) -> pd.DataFrame:
     ordered = events.sort_values("updated_at")
-
     current = ordered.drop_duplicates("booking_id")
-
     on_date = current[current["arrival_date"] == report_date].copy()
-
     confirmed = on_date[on_date["status"] == "confirmed"]
-
     result = confirmed[
         ["booking_id", "guest_name", "room_type", "updated_at"]
     ]
-
     return result.sort_values("guest_name")
 
 

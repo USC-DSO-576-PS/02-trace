@@ -11,9 +11,7 @@ def upgrade_offers(
         "tier_points",
         ascending=False,
     )
-
     offers = ranked.loc[: rooms_available - 1]
-
     return offers[
         ["guest_id", "tier_points", "checked_in_at", "stay_nights"]
     ]

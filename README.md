@@ -11,6 +11,9 @@ front-office programs.
 | `upgrade_policy_memo.md` | The one Brightspace deliverable. |
 | `AGENTS.md` / `tutor.md` | Guardrails and fresh practice for your agent. |
 
+In `booking_events.csv`, `updated_at` is zero-padded `HH:MM` text from one day,
+so sorting it as text is chronological.
+
 For `booking_basics.py`, predict first and press **Shift+Enter** on one cell.
 After the paper traces, run:
 
