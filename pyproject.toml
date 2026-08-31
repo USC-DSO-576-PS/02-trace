@@ -3,4 +3,9 @@ name = "harbor-house-front-office"
 version = "0.1.0"
 description = "Harbor House arrival-board and upgrade-offer traces"
 requires-python = ">=3.11"
-dependencies = ["pandas>=2.0"]
+# pandas for the tables; ipykernel so the `# %%` cells in booking_basics.py run
+# in VS Code's interactive window straight after `uv sync`.
+dependencies = [
+    "pandas>=2.0",
+    "ipykernel>=6.29",
+]

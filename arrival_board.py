@@ -1,4 +1,14 @@
-"""Inherited arrival-board logic for Harbor House."""
+"""Inherited arrival-board logic for Harbor House.
+
+RUN THIS FILE FROM THE TERMINAL, AS A WHOLE, AFTER YOUR PAPER TRACE:
+
+    uv run python arrival_board.py
+
+The terminal must be in the `02-trace` folder: this file reads
+`booking_events.csv` by name, so Python looks for it in the folder you are
+currently in. In VS Code, Terminal -> New Terminal opens there already.
+Type `pwd` to check; it should end in `02-trace`. See README.md.
+"""
 
 import pandas as pd
 
