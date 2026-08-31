@@ -1,20 +1,7 @@
 """Small pandas objects to predict, run, and inspect one cell at a time.
 
-RUN THIS FILE IN INTERACTIVE MODE, NOT FROM THE TERMINAL.
-
-Click inside a cell (a block under a `# %%` line) and press Shift+Enter, or
-click the "Run Cell" link above the `# %%`. The result opens in the Python
-Interactive window beside your code. Shift+Enter also moves to the next cell;
-Ctrl+Enter runs the cell and stays put.
-
-Predict the result, its type, and its shape on paper BEFORE you press.
-
-The first time, VS Code asks which Python to use: choose the one inside this
-folder, `02-trace/.venv`. If it is not offered, run `uv sync` here first.
-
-Running this file from the terminal prints nothing, and that is expected: each
-cell ends in a bare name, and bare names only display in interactive mode.
-See README.md.
+Interactive file: in VS Code, press Shift+Enter on one `# %%` cell at a time.
+Run from the terminal it prints nothing - that is expected. See README.md.
 """
 
 # %% Starting table
