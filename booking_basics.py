@@ -43,16 +43,20 @@ eligible = stays[long_stay]
 eligible
 
 
-# %% Named steps
+# %% The table both paths start from
 working = stays.copy()
 working["room_revenue"] = room_revenue
+working
+
+
+# %% Named steps: filter, sort, select columns
 eligible = working[long_stay]
 ranked = eligible.sort_values("room_revenue", ascending=False)
 result = ranked[["booking_id", "room_revenue"]]
 result
 
 
-# %% The same path as a chain
+# %% The same three steps on the same `working`, as one chain
 same_result = (
     working[working["nights"] >= 2]
     .sort_values("room_revenue", ascending=False)
