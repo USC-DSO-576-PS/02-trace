@@ -16,9 +16,10 @@ under a `# %%` line), predict, then press **Shift + Enter**. The result appears
 in the Interactive window beside your code. If VS Code asks which Python to use,
 pick the one in this folder, `02-trace/.venv`.
 
-**Terminal** means: open a terminal with **Terminal -> New Terminal** in VS
-Code, or **Ctrl + `** (the backtick key above Tab - `Ctrl`, not `Cmd`, on a Mac
-too). It opens in this folder, which is where these have to run:
+**Terminal** means: open a terminal inside VS Code — menu **Terminal → New
+Terminal**, or press **Ctrl** and the **backtick** key (above Tab, left of the
+1). It is **Ctrl** on a Mac too, not **Cmd**. The terminal opens in this folder,
+which is where these have to run:
 
 ```text
 uv run python arrival_board.py
